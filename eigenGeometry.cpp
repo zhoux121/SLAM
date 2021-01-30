@@ -26,7 +26,7 @@ int main(int argc, char** argv){
     v_rotated = rotation_matrix * v;
     cout << "(1,0,0) after rotation = " << v_rotated.transpose() << endl;
     cout << "===============================" << endl;
-    Vector3d euler_angle = rotation_matrix.eulerAngles(2,1,0);
+    Vector3d euler_angle = rotation_matrix.eulerAngles(2,1,0); // yaw pitch roll
     cout << "Yaw Pitch Roll = " << euler_angle.transpose() << endl;
     cout << "===============================" << endl;
 
@@ -56,6 +56,12 @@ int main(int argc, char** argv){
     v_rotated = q*v; // ON math it is qvq^{-1}
     cout << "(1,0,0) after rotation = " << v_rotated.transpose() << endl;
     cout << "===============================" << endl;
-
+    // (3x3) Eigen::Matrix3d
+    // (3x1) Eigen::AngleAxisd
+    // (3x1) Vector3d
+    // (4x1) Eigen::Quaterniond
+    // (4x4) Eigen::Isometry3d
+    // (4x4) Eigen::Affine3d
+    // (4x4) Eigen::Projective3d 
     return 0;
 }
